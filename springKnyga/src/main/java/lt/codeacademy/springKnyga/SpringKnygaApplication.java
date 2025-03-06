@@ -18,8 +18,23 @@ public class SpringKnygaApplication {
 	}
 
 	@EventListener(ApplicationReadyEvent.class)
-	public void test(){
+	public void commands(){
 		knygaService.addTestKnyga();
+
+		knygaService.removeKnyga(1);
+
+		knygaService.printKnygaById(2);
+		knygaService.updateVieta(2, "Sodas");
+		knygaService.printKnygaById(2);
+
+		knygaService.printAllGenresWithBooks();
+
+		knygaService.getByZanras("Fantastika");
+		knygaService.printKnygosByZanras("Fantastika");
+
 	}
+
+
+
 
 }
